@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Education from "./pages/Education";
 import Projects from "./pages/Projects";
+import Aquarium from "./pages/Aquarium";
+
 
 export default function App() {
   return (
@@ -17,6 +19,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/education" element={<Education />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/aquarium" element={<Aquarium />} />
         </Routes>
       </main>
     </div>

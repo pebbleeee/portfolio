@@ -7,7 +7,7 @@ export default function Navbar() {
         My Portfolio
       </Link>
 
-      <div className="flex space-x-6">
+      <div className="flex items-center space-x-6">
         <Link to="/" className="hover:text-teal-300 transition-colors">
           Home
         </Link>
@@ -20,7 +20,16 @@ export default function Navbar() {
         <Link to="/projects" className="hover:text-teal-300 transition-colors">
           Projects
         </Link>
+
+        {/* Aquarium link (special styling) */}
+        <Link
+          to="/aquarium"
+          className="px-4 py-1 rounded-full bg-teal-500/20 text-teal-200 font-semibold hover:bg-teal-500/30 hover:text-white transition-all"
+        >
+          Aquarium
+        </Link>
       </div>
+
     </nav>
   );
 }
