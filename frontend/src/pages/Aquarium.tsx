@@ -29,7 +29,7 @@ export default function Aquarium() {
                         className="bubble"
                         style={{
                             left: `${Math.random() * 100}%`,
-                            animationDelay: `${Math.random() * 8}s`,
+                            animationDelay: `-${Math.random() * 8}s`,
                             width: `${size}px`,
                             height: `${size}px`,
                             bottom: `${Math.random() * 60}px`,
