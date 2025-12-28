@@ -17,29 +17,8 @@ export default function Aquarium() {
 
     return (
         <section className="relative h-full flex items-center justify-center px-6 overflow-hidden">
-
-            {/* Ambient glow */}
-            <div className="absolute inset-0 bg-gradient-to-b from-teal-900/10 to-transparent pointer-events-none" />
-
-            {Array.from({ length: 16 }).map((_, i) => {
-                const size = 8 + Math.random() * 10;
-                return (
-                    <div
-                        key={i}
-                        className="bubble"
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            animationDelay: `-${Math.random() * 8}s`,
-                            width: `${size}px`,
-                            height: `${size}px`,
-                            bottom: `${Math.random() * 60}px`,
-                        }}
-                    />
-                );
-            })}
-
             {/* Tank */}
-            <div className="relative w-full max-w-xl bg-gray-800/60 backdrop-blur rounded-2xl p-8 border border-teal-500/20 aquarium-glow">
+            <div className="relative w-full max-w-xl bg-gray-800/60 backdrop-blur rounded-2xl p-8 border border-teal-500/20">
 
                 <h1 className="text-3xl font-bold text-center mb-2">
                     Leave a Message in the Tank 🐠

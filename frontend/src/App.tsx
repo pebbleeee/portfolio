@@ -1,5 +1,6 @@
-import { Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
+import GlobalBubbles from "./components/GlobalBubbles";
 
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -10,17 +11,27 @@ import Aquarium from "./pages/Aquarium";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen relative">
+      <div className="light-rays" />
+      <GlobalBubbles />
       <Navbar />
 
-      <main className="h-[calc(100vh-4rem)] px-6">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/aquarium" element={<Aquarium />} />
-        </Routes>
+      <main className="px-6">
+        <section id="home" className="min-h-screen pt-16">
+          <Home />
+        </section>
+        <section id="about" className="min-h-screen pt-16">
+          <About />
+        </section>
+        <section id="projects" className="min-h-screen pt-16">
+          <Projects />
+        </section>
+        <section id="education" className="min-h-screen pt-16">
+          <Education />
+        </section>
+        <section id="aquarium" className="min-h-screen pt-16">
+          <Aquarium />
+        </section>
       </main>
     </div>
   );

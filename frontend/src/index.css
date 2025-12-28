@@ -1,27 +1,130 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --color-background: hsl(210 100% 6%);
+  --color-foreground: hsl(180 100% 95%);
+  --color-primary: hsl(180 70% 50%);
+  --color-secondary: hsl(210 60% 20%);
+  --color-accent: hsl(15 90% 60%);
+  --color-muted: hsl(210 50% 15%);
+  --color-muted-foreground: hsl(180 30% 70%);
+
+  --color-ocean-surface: hsl(200 80% 35%);
+  --color-ocean-mid: hsl(210 90% 20%);
+  --color-ocean-deep: hsl(220 100% 8%);
+  --color-coral-pink: hsl(15 90% 65%);
+  --color-coral-orange: hsl(25 95% 55%);
+  --color-seafoam: hsl(165 60% 60%);
+  --color-bubble: hsl(190 100% 90%);
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+:root {
+  --background: 210 100% 6%;
+  --foreground: 180 100% 95%;
+  --primary: 180 70% 50%;
+  --secondary: 210 60% 20%;
+  --accent: 15 90% 60%;
+  --muted: 210 50% 15%;
+  --muted-foreground: 180 30% 70%;
+
+  --ocean-surface: 200 80% 35%;
+  --ocean-mid: 210 90% 20%;
+  --ocean-deep: 220 100% 8%;
+
+  --coral-pink: 15 90% 65%;
+  --coral-orange: 25 95% 55%;
+  --seafoam: 165 60% 60%;
+  --bubble: 190 100% 90%;
+
+  --gradient-ocean: linear-gradient(180deg, hsl(200 80% 35%) 0%, hsl(210 90% 20%) 30%, hsl(220 100% 8%) 100%);
+  --gradient-coral: linear-gradient(135deg, hsl(15 90% 65%) 0%, hsl(25 95% 55%) 100%);
+  --gradient-glow: radial-gradient(circle, hsl(180 70% 50% / 0.3) 0%, transparent 70%);
+}
+
+@layer base {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+  }
+}
+
+body {
+  background: var(--gradient-ocean);
+  color: hsl(var(--foreground));
+  font-family: var(--font-body);
+  min-height: 100vh;
+}
+
+.light-rays {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60vh;
+  background: linear-gradient(180deg, hsl(190 100% 70% / 0.1) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.light-rays::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 24%;
+  /* Changed from 35% to move left */
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(180deg, hsl(180 100% 80% / 0.15) 0%, transparent 80%);
+  transform: skewX(-15deg);
+}
+
+.light-rays::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 45%;
+  /* Changed from 55% to move left */
+  width: 150px;
+  height: 100%;
+  background: linear-gradient(180deg, hsl(180 100% 80% / 0.1) 0%, transparent 70%);
+  transform: skewX(10deg);
+}
 
 @keyframes bubble {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 0.6;
-    }
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.6;
+  }
 
-    100% {
-        transform: translateY(-80vh) scale(1.2);
-        opacity: 0;
-    }
+  100% {
+    transform: translateY(-80vh) scale(1.2);
+    opacity: 0;
+  }
 }
 
 .bubble {
-    position: absolute;
-    bottom: -20px;
-    border-radius: 50%;
-    background: rgba(94, 234, 212, 0.4);
-    animation: bubble 8s infinite ease-in;
+  position: absolute;
+  bottom: -20px;
+  border-radius: 50%;
+  background: hsl(var(--bubble) / 0.4);
+  animation: bubble 8s infinite ease-in;
 }
 
 .aquarium-glow {
-    box-shadow:
-        0 0 40px rgba(94, 234, 212, 0.15),
-        inset 0 0 30px rgba(94, 234, 212, 0.1);
+  box-shadow:
+    0 0 40px rgba(94, 234, 212, 0.15),
+    inset 0 0 30px rgba(94, 234, 212, 0.1);
 }
